@@ -1,0 +1,186 @@
+<!--
+**********************************************************************
+**********       Variables pour configurer le NOM           **********
+**********************************************************************
+TailNom  // Taille (défaut 20px)
+EpPolNom  // Epaisseur (défaut bold) autre choix(normal)
+CoulNom  // Couleur (défaut green)
+MargeHNom   // Espace Haut (défaut 10px)
+textAlignNom   // Alignement (défaut center)
+EpBordNom   // Epaisseur du contour du texte (défaut 0px)
+CoulBordNom   // Couleur du contour du texte (défaut #ffffff = Blanc)
+**********************************************************************
+**********       Variables pour configurer la VALEUR        **********
+**********************************************************************
+TailVal  // Taille (défaut 20px)
+EpPolVal  // Epaisseur (défaut bold) autre choix(normal)
+CoulVal  // Couleur (défaut green)
+CoulValMax  // Couleur de la valeur > de l’unité (défaut red)
+CoulValMin  // Couleur de la valeur < de l’unité (défaut blue)
+MaxVal  // Valeur > de l’unité (défaut 22)
+MinVal  // Valeur < de l’unité (défaut 15)
+MargeHVal   // Espace Haut (défaut 10px)
+textAlignVal   // Alignement (défaut center)
+EpBordVal   // Epaisseur du contour du texte (défaut 0px)
+CoulBordVal   // Couleur du contour du texte (défaut #ffffff = Blanc)
+**********************************************************************
+**********  Variables pour configurer le MIN/MAX/TENDANCE   **********
+**********************************************************************
+TailMMT  // Taille (défaut 20px)
+EpPolMMT  // Epaisseur (défaut bold) autre choix(normal)
+CoulMMT  // Couleur (défaut green)
+MargeHMMT   // Espace Haut (défaut 10px)
+textAlignMMT   // Alignement (défaut center)
+EpBordMMT   // Epaisseur du contour du texte (défaut 0px)
+CoulBordMMT   // Couleur du contour du texte (défaut #ffffff = Blanc)
+**********************************************************************
+**********        Variables pour configurer la Durée        **********
+**********************************************************************
+TailDur  // Taille (défaut 20px)
+EpPolDur  // Epaisseur (défaut bold) autre choix(normal)
+CoulDur  // Couleur (défaut green)
+MargeHDur   // Espace Haut (défaut 10px)
+textAlignDur   // Alignement (défaut center)
+EpBordDur   // Epaisseur du contour du texte (défaut 0px)
+CoulBordDur   // Couleur du contour du texte (défaut #ffffff = Blanc)
+
+**********************************************************************
+**********************************************************************
+**********                CREATION GRAOULLY                 **********
+**********************************************************************
+**********************************************************************
+
+-->
+<div class="tooltips cmd cmd-widget #history#" data-type="info" data-subtype="numeric" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" style="display: block;">
+
+<div class="title #hide_name#">
+<div class="name#id#"></div>
+</div>  
+
+<div>
+	<div class="state#id#""></div>
+</div>
+
+<div class="title cmdStats #hide_history#">
+<div class="Histo#id#">Min : #minHistoryValue# | Max : #maxHistoryValue# <span class="#tendance#"></span>      
+
+
+<div class="AffDuree#id#">
+  <spam class="timeCmd#id#"></spam>
+</div>
+
+<script>
+
+jeedom.cmd.update['#id#'] = function(_options){
+$('.cmd[data-cmd_id=#id#]').attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate)
+
+$('.cmd[data-cmd_id=#id#] .state#id#').empty().append(_options.display_value+' '+'#unite#');
+$('.cmd[data-cmd_id=#id#] .name#id#').empty().append('#name#');
+
+
+
+var TailNom#id#   = ('#TailNom#'   !='#'+'TailNom#') ?   "#TailNom#"  :"30";  // Taille du NOM
+var EpPolNom#id#   = ('#EpPolNom#'   !='#'+'EpPolNom#') ?   "#EpPolNom#"  :"bold";  // Epaisseure du texte  NOM "bold" autre choix "normal"
+var CoulNom#id#   = ('#CoulNom#'   !='#'+'CoulNom#') ?   "#CoulNom#"  :"black";  // couleur texte  NOM
+var MargeHNom#id# = ('#MargeHNom#' !='#'+'MargeHNom#') ? "#MargeHNom#":'10';   // Marge haute NOM
+var textAlignNom#id# = ('#textAlignNom#' !='#'+'textAlignNom#') ? "#textAlignNom#":'center';   // Mage gauche et droite Valeur
+var EpBordNom#id# = ('#EpBordNom#' !='#'+'EpBordNom#') ? "#EpBordNom#":'1';   // Epaisseur contour Valeur
+var CoulBordNom#id# = ('#CoulBordNom#' !='#'+'CoulBordNom#') ? "#CoulBordNom#":'White';   // Couleur contour Valeur
+
+//
+var TailVal#id#   = ('#TailVal#'   !='#'+'TailVal#') ?   "#TailVal#"  :"20px";  // Taille du texte  VALEUR
+var EpPolVal#id#   = ('#EpPolVal#'   !='#'+'EpPolVal#') ?   "#EpPolVal#"  :"bold";  // Epaisseure du texte  VALEUR autre choix "normal"
+var CoulVal#id#   = ('#CoulVal#'   !='#'+'CoulVal#') ?   "#CoulVal#"  :"green";  // couleur texte  VALEUR
+var CoulValMax#id#   = ('#CoulValMax#'   !='#'+'CoulValMax#') ?   "#CoulValMax#"  :"red";  // couleur texte  VALEUR
+var CoulValMin#id#   = ('#CoulValMin#'   !='#'+'CoulValMin#') ?   "#CoulValMin#"  :"blue";  // couleur texte  VALEUR
+var MaxVal#id#   = ('#MaxVal#'   !='#'+'MaxVal#') ?   "#MaxVal#"  :22;  // Max  VALEUR
+var MinVal#id#   = ('#MinVal#'   !='#'+'MinVal#') ?   "#MinVal#"  :15;  // Min  VALEUR
+var MargeHVal#id# = ('#MargeHVal#' !='#'+'MargeHVal#') ? "#MargeHVal#":'10';   // Marge haute Valeur
+var textAlignVal#id# = ('#textAlignVal#' !='#'+'textAlignVal#') ? "#textAlignVal#":'center';   // Mage gauche et droite Valeur
+var EpBordVal#id# = ('#EpBordVal#' !='#'+'EpBordVal#') ? "#EpBordVal#":'0';   // Epaisseur contour Valeur
+var CoulBordVal#id# = ('#CoulBordVal#' !='#'+'CoulBordVal#') ? "#CoulBordVal#":'#ffffff';   // Couleur contour Valeur
+
+var TailMMT#id#   = ('#TailMMT#'   !='#'+'TailMMT#') ?   "#TailMMT#"  :"10";  // Taille du NOM
+var EpPolMMT#id#   = ('#EpPolMMT#'   !='#'+'EpPolMMT#') ?   "#EpPolMMT#"  :"bold";  // Epaisseure du texte  NOM "bold" autre choix "normal"
+var CoulMMT#id#   = ('#CoulMMT#'   !='#'+'CoulMMT#') ?   "#CoulMMT#"  :"White";  // couleur texte  NOM
+var MargeHMMT#id# = ('#MargeHMMT#' !='#'+'MargeHMMT#') ? "#MargeHMMT#":'10';   // Marge haute NOM
+var textAlignMMT#id# = ('#textAlignNom#' !='#'+'textAlignNom#') ? "#textAlignNom#":'center';   // Mage gauche et droite Valeur
+var EpBordMMT#id# = ('#EpBordMMT#' !='#'+'EpBordMMT#') ? "#EpBordMMT#":'0.4';   // Epaisseur contour Valeur
+var CoulBordMMT#id# = ('#CoulBordMMT#' !='#'+'CoulBordMMT#') ? "#CoulBordMMT#":'#1132de';   // Couleur contour Valeur
+
+var TailDur#id#   = ('#TailDur#'   !='#'+'TailDur#') ?   "#TailDur#"  :"15";  // Taille du NOM
+var EpPolDur#id#   = ('#EpPolDur#'   !='#'+'EpPolDur#') ?   "#EpPolDur#"  :"bold";  // Epaisseure du texte  NOM "bold" autre choix "normal"
+var CoulDur#id#   = ('#CoulDur#'   !='#'+'CoulDur#') ?   "#CoulDur#"  :"White";  // couleur texte  NOM
+var MargeHDur#id# = ('#MargeHDur#' !='#'+'MargeHDur#') ? "#MargeHDur#":'10';   // Marge haute NOM
+var textAlignDur#id# = ('#textAlignDur#' !='#'+'textAlignDur#') ? "#textAlignDur#":'center';   // Mage gauche et droite Valeur
+var EpBordDur#id# = ('#EpBordDur#' !='#'+'EpBordDur#') ? "#EpBordDur#":'0.4';   // Epaisseur contour Valeur
+var CoulBordDur#id# = ('#CoulBordDur#' !='#'+'CoulBordDur#') ? "#CoulBordDur#":'#1132de';   // Couleur contour Valeur
+
+var AffDuree#id# = ('#AffDuree#' !='#'+'AffDuree#') ? "#AffDuree#":'oui';
+
+
+
+$(".name#id#").css('font-size', TailNom#id#+'px');
+$(".name#id#").css('font-weight', EpPolNom#id#);
+$(".name#id#").css('color', CoulNom#id#);   
+$(".name#id#").css('margin-top', MargeHNom#id#+'px' ); 
+$(".name#id#").css('text-align', textAlignNom#id#);   
+$(".name#id#").css('-webkit-text-stroke', EpBordNom#id#+'px' ); 
+$(".name#id#").css('-webkit-text-stroke-color', CoulBordNom#id# ); 
+
+$(".state#id#").css('font-size', TailVal#id#+'px');   
+$(".state#id#").css('font-weight', EpPolVal#id#);
+$(".state#id#").css('color', CoulVal#id# ); 
+$(".state#id#").css('margin-top', MargeHVal#id#+'px' ); 
+$(".state#id#").css('text-align', textAlignVal#id# ); 
+$(".state#id#").css('-webkit-text-stroke' , EpBordVal#id#+'px' ); 
+$(".state#id#").css('-webkit-text-stroke-color',  CoulBordVal#id#  ); 
+
+$(".Histo#id#").css('font-size', TailMMT#id#+'px');   
+$(".Histo#id#").css('font-weight', EpPolMMT#id#);
+$(".Histo#id#").css('color', CoulMMT#id# ); 
+$(".Histo#id#").css('margin-top', MargeHMMT#id#+'px');   
+$(".Histo#id#").css('text-align', textAlignMMT#id#); 
+$(".Histo#id#").css('-webkit-text-stroke', EpBordMMT#id#+'px' ); 
+$(".Histo#id#").css('-webkit-text-stroke-color', CoulBordMMT#id# ); 
+
+$(".AffDuree#id#").css('font-size', TailDur#id#+'px');   
+$(".AffDuree#id#").css('font-weight', EpPolDur#id#);
+$(".AffDuree#id#").css('color', CoulDur#id#);   
+$(".AffDuree#id#").css('margin-top', MargeHDur#id#+'px');   
+$(".AffDuree#id#").css('text-align', textAlignDur#id#);   
+$(".AffDuree#id#").css('-webkit-text-stroke', EpBordDur#id#+'px' ); 
+$(".AffDuree#id#").css('-webkit-text-stroke-color', CoulBordDur#id# ); 
+//
+
+
+if (_options.display_value > MaxVal#id# ) {
+$(".state#id#").css('color', CoulValMax#id#);   
+}else if (_options.display_value < MinVal#id# ) { 
+  $(".state#id#").css('color', CoulValMin#id#);   
+}
+  //
+$('.cmd[data-cmd_id=#id#]').removeClass('label label-warning label-danger')
+if(_options.alertLevel == 'warning'){
+$('.cmd[data-cmd_id=#id#]').addClass('label label-warning');
+}else if(_options.alertLevel == 'danger'){
+$('.cmd[data-cmd_id=#id#]').addClass('label label-danger');
+}
+    if( AffDuree#id# == 'oui'){
+      jeedom.cmd.displayDuration(_options.valueDate, $('.cmd[data-cmd_id=#id#] .timeCmd#id#'));
+    }
+//      	if (duree#id# == "oui") {
+//            var timeInMillis = Date.parse(_options.collectDate);
+//            $('.timeCmd#id#').attr('data-time',timeInMillis);
+//            if ((timeInMillis > 0) && (timeInMillis <= Date.now())) {
+//              var d = (Date.now() - timeInMillis) / 1000;
+//              var h = Math.floor(d / 3600);
+//              var m = Math.floor(d % 3600 / 60);
+//              $('.timeCmd#id#').empty().append(((h > 0 ? h + " h " : "") + (m > 0 ? (h > 0 && m < 10 ? "0" : "") + m + " min" : "0 min")));
+//            }
+//        }
+
+}
+jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
+</script>
+</div>
