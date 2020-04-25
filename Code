@@ -44,6 +44,7 @@ textAlignDur   // Alignement (défaut center)
 EpBordDur   // Epaisseur du contour du texte (défaut 0px)
 CoulBordDur   // Couleur du contour du texte (défaut #ffffff = Blanc)
 
+AffDuree // Afficher la durée oui / non
 **********************************************************************
 **********************************************************************
 **********                CREATION GRAOULLY                 **********
@@ -169,16 +170,6 @@ $('.cmd[data-cmd_id=#id#]').addClass('label label-danger');
     if( AffDuree#id# == 'oui'){
       jeedom.cmd.displayDuration(_options.valueDate, $('.cmd[data-cmd_id=#id#] .timeCmd#id#'));
     }
-//      	if (duree#id# == "oui") {
-//            var timeInMillis = Date.parse(_options.collectDate);
-//            $('.timeCmd#id#').attr('data-time',timeInMillis);
-//            if ((timeInMillis > 0) && (timeInMillis <= Date.now())) {
-//              var d = (Date.now() - timeInMillis) / 1000;
-//              var h = Math.floor(d / 3600);
-//              var m = Math.floor(d % 3600 / 60);
-//              $('.timeCmd#id#').empty().append(((h > 0 ? h + " h " : "") + (m > 0 ? (h > 0 && m < 10 ? "0" : "") + m + " min" : "0 min")));
-//            }
-//        }
 
 }
 jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
