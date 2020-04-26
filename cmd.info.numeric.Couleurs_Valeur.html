@@ -6,7 +6,7 @@ TailNom  // Taille (défaut 20px)
 EpPolNom  // Epaisseur (défaut bold) autre choix(normal)
 CoulNom  // Couleur (défaut green)
 MargeHNom   // Espace Haut (défaut 10px)
-textAlignNom   // Alignement (défaut center)
+textAlignNom   // Alignement (défaut center) autre choix(right;left)
 EpBordNom   // Epaisseur du contour du texte (défaut 0px)
 CoulBordNom   // Couleur du contour du texte (défaut #ffffff = Blanc)
 **********************************************************************
@@ -20,7 +20,7 @@ CoulValMin  // Couleur de la valeur < de l’unité (défaut blue)
 MaxVal  // Valeur > de l’unité (défaut 22)
 MinVal  // Valeur < de l’unité (défaut 15)
 MargeHVal   // Espace Haut (défaut 10px)
-textAlignVal   // Alignement (défaut center)
+textAlignVal   // Alignement (défaut center) autre choix(right;left)
 EpBordVal   // Epaisseur du contour du texte (défaut 0px)
 CoulBordVal   // Couleur du contour du texte (défaut #ffffff = Blanc)
 **********************************************************************
@@ -30,7 +30,7 @@ TailMMT  // Taille (défaut 20px)
 EpPolMMT  // Epaisseur (défaut bold) autre choix(normal)
 CoulMMT  // Couleur (défaut green)
 MargeHMMT   // Espace Haut (défaut 10px)
-textAlignMMT   // Alignement (défaut center)
+textAlignMMT   // Alignement (défaut center) autre choix(right;left)
 EpBordMMT   // Epaisseur du contour du texte (défaut 0px)
 CoulBordMMT   // Couleur du contour du texte (défaut #ffffff = Blanc)
 **********************************************************************
@@ -45,9 +45,10 @@ EpBordDur   // Epaisseur du contour du texte (défaut 0px)
 CoulBordDur   // Couleur du contour du texte (défaut #ffffff = Blanc)
 
 AffDuree // Afficher la durée oui / non
+
 **********************************************************************
 **********************************************************************
-**********                CREATION GRAOULLY                 **********
+**********                CREATION GRAOUILLY                **********
 **********************************************************************
 **********************************************************************
 
@@ -170,7 +171,6 @@ $('.cmd[data-cmd_id=#id#]').addClass('label label-danger');
     if( AffDuree#id# == 'oui'){
       jeedom.cmd.displayDuration(_options.valueDate, $('.cmd[data-cmd_id=#id#] .timeCmd#id#'));
     }
-
 }
 jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
 </script>
