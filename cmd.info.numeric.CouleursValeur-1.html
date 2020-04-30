@@ -1,0 +1,44 @@
+<!--
+**********************************************************************
+**********       Variables pour configurer la VALEUR        **********
+**********************************************************************
+CoulVal  // Couleur (défaut green)
+CoulValMax  // Couleur de la valeur > de l’unité (défaut red)
+CoulValMin  // Couleur de la valeur < de l’unité (défaut blue)
+MaxVal  // Valeur > de l’unité (défaut 22)
+MinVal  // Valeur < de l’unité (défaut 15)
+-->
+<div class="tooltips cmd cmd-widget #history#" data-type="info" data-subtype="numeric" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" style="display: block;">
+<div class="name#id#"></div>
+<div class="state#id#"></div>
+<div class="timeCmd label label-default" id="timeCmd#uid#"></div>
+<div class="title cmdStats #hide_history#"></div>
+<div class="Histo#id#">Min : #minHistoryValue# | Max : #maxHistoryValue# <span class="#tendance#"></span></div>      
+
+</div>
+<script>
+jeedom.cmd.update['#id#'] = function(_options){
+   jeedom.cmd.displayDuration(_options.valueDate,  $('#timeCmd#uid#'));
+	$('.cmd[data-cmd_id=#id#] .state#id#').empty().append(_options.display_value+' '+'#unite#');
+	$('.cmd[data-cmd_id=#id#] .name#id#').empty().append('#name#');
+
+	var CoulVal   = ('#CoulVal#'   !='#'+'CoulVal#') ?   "#CoulVal#"  :"green";  // couleur texte  VALEUR
+	var CoulValMax   = ('#CoulValMax#'   !='#'+'CoulValMax#') ?   "#CoulValMax#"  :"red";  // couleur texte  VALEUR
+	var CoulValMin   = ('#CoulValMin#'   !='#'+'CoulValMin#') ?   "#CoulValMin#"  :"blue";  // couleur texte  VALEUR
+	var MaxVal   = ('#MaxVal#'   !='#'+'MaxVal#') ?   "#MaxVal#"  :22;  // Max  VALEUR
+	var MinVal   = ('#MinVal#'   !='#'+'MinVal#') ?   "#MinVal#"  :21;  // Min  VALEUR
+
+  if (_options.display_value > MaxVal ) {
+		$(".state#id#").css('color', CoulValMax);   
+	}else if (_options.display_value < MinVal ) { 
+	    $(".state#id#").css('color', CoulValMin);   
+	}
+
+
+}
+jeedom.cmd.update['#id#']({display_value:'#state#',
+                           valueDate:'#valueDate#',
+                           collectDate:'#collectDate#',
+                           alertLevel:'#alertLevel#'});
+
+</script>
