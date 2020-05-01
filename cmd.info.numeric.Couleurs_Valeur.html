@@ -2,47 +2,47 @@
 **********************************************************************
 **********       Variables pour configurer le NOM           **********
 **********************************************************************
-TailNom  // Taille (défaut 20px)
+TailNom  // Taille (défaut 20)
 EpPolNom  // Epaisseur (défaut bold) autre choix(normal)
-CoulNom  // Couleur (défaut green)
-MargeHNom   // Espace Haut (défaut 10px)
-textAlignNom   // Alignement (défaut center) autre choix(right;left)
-EpBordNom   // Epaisseur du contour du texte (défaut 0px) peux etre utiliser avec un point exemple :(0.4)
-CoulBordNom   // Couleur du contour du texte (défaut #ffffff = Blanc)
+CoulNom  // Couleur (défaut black)
+MargeHNom   // Espace Haut (défaut 10)
+TextAlignNom   // Alignement (défaut center) autre choix(right;left)
+EpBordNom   // Epaisseur du contour du texte (défaut 1) peux etre utiliser avec un point exemple :(0.4)
+CoulBordNom   // Couleur du contour du texte (défaut white ou  #ffffff)
 **********************************************************************
 **********       Variables pour configurer la VALEUR        **********
 **********************************************************************
-TailVal  // Taille (défaut 20px)
+TailVal  // Taille (défaut 20)
 EpPolVal  // Epaisseur (défaut bold) autre choix(normal)
 CoulVal  // Couleur (défaut green)
 CoulValMax  // Couleur de la valeur > de l’unité (défaut red)
 CoulValMin  // Couleur de la valeur < de l’unité (défaut blue)
 MaxVal  // Valeur > de l’unité (défaut 22)
 MinVal  // Valeur < de l’unité (défaut 15)
-MargeHVal   // Espace Haut (défaut 10px)
-textAlignVal   // Alignement (défaut center) autre choix(right;left)
-EpBordVal   // Epaisseur du contour du texte (défaut 0px)
+MargeHVal   // Espace Haut (défaut 10)
+TextAlignVal   // Alignement (défaut center) autre choix(right;left)
+EpBordVal   // Epaisseur du contour du texte (défaut 0)
 CoulBordVal   // Couleur du contour du texte (défaut #ffffff = Blanc)
 **********************************************************************
 **********  Variables pour configurer le MIN/MAX/TENDANCE   **********
 **********************************************************************
-TailMMT  // Taille (défaut 20px)
+TailMMT  // Taille (défaut 10)
 EpPolMMT  // Epaisseur (défaut bold) autre choix(normal)
-CoulMMT  // Couleur (défaut green)
-MargeHMMT   // Espace Haut (défaut 10px)
-textAlignMMT   // Alignement (défaut center) autre choix(right;left)
-EpBordMMT   // Epaisseur du contour du texte (défaut 0px)
-CoulBordMMT   // Couleur du contour du texte (défaut #ffffff = Blanc)
+CoulMMT  // Couleur (défaut white)
+MargeHMMT   // Espace Haut (défaut 10)
+TextAlignMMT   // Alignement (défaut center) autre choix(right;left)
+EpBordMMT   // Epaisseur du contour du texte (défaut 0.4)
+CoulBordMMT   // Couleur du contour du texte (défaut black)
 **********************************************************************
 **********        Variables pour configurer la Durée        **********
 **********************************************************************
-TailDur  // Taille (défaut 20px)
+TailDur  // Taille (défaut 15)
 EpPolDur  // Epaisseur (défaut bold) autre choix(normal)
-CoulDur  // Couleur (défaut green)
-MargeHDur   // Espace Haut (défaut 10px)
-textAlignDur   // Alignement (défaut center)
-EpBordDur   // Epaisseur du contour du texte (défaut 0px)
-CoulBordDur   // Couleur du contour du texte (défaut #ffffff = Blanc)
+CoulDur  // Couleur (défaut white)
+MargeHDur   // Espace Haut (défaut 10)
+TextAlignDur   // Alignement (défaut center)
+EpBordDur   // Epaisseur du contour du texte (défaut 0.4)
+CoulBordDur   // Couleur du contour du texte (white ou  #ffffff)
 
 AffDuree // Afficher la durée oui / non
 
@@ -72,42 +72,42 @@ jeedom.cmd.update['#id#'] = function(_options){
   	$('.cmd[data-cmd_id=#id#] .state#id#').empty().append(_options.display_value+' '+'#unite#');
 	$('.cmd[data-cmd_id=#id#] .name#id#').empty().append('#name#');
 
-	var TailNom   		= ('#TailNom#'   !='#'+'TailNom#') ?   "#TailNom#"  :"30";  // Taille du NOM
-	var EpPolNom   		= ('#EpPolNom#'   !='#'+'EpPolNom#') ?   "#EpPolNom#"  :"bold";  // Epaisseure du texte  NOM "bold" autre choix "normal"
+	var TailNom   		= ('#TailNom#'   !='#'+'TailNom#') ?   "#TailNom#"  :'20';  // Taille du NOM
+	var EpPolNom   		= ('#EpPolNom#'   !='#'+'EpPolNom#') ?   "#EpPolNom#"  :'bold';  // Epaisseure du texte  NOM "bold" autre choix "normal"
 	var CoulNom   		= ('#CoulNom#'   !='#'+'CoulNom#') ?   "#CoulNom#"  :"black";  // couleur texte  NOM
 	var MargeHNom 		= ('#MargeHNom#' !='#'+'MargeHNom#') ? "#MargeHNom#":'10';   // Marge haute NOM
-	var textAlignNom 	= ('#textAlignNom#' !='#'+'textAlignNom#') ? "#textAlignNom#":'center';   // Mage gauche et droite Valeur
+	var TextAlignNom 	= ('#textAlignNom#' !='#'+'textAlignNom#') ? "#textAlignNom#":'center';   // Mage gauche et droite Valeur
 	var EpBordNom 		= ('#EpBordNom#' !='#'+'EpBordNom#') ? "#EpBordNom#":'1';   // Epaisseur contour Valeur
-	var CoulBordNom 	= ('#CoulBordNom#' !='#'+'CoulBordNom#') ? "#CoulBordNom#":'White';   // Couleur contour Valeur
+	var CoulBordNom 	= ('#CoulBordNom#' !='#'+'CoulBordNom#') ? "#CoulBordNom#":'white';   // Couleur contour Valeur
 
 //
-	var TailVal   		= ('#TailVal#'   !='#'+'TailVal#') ?   "#TailVal#"  :"20px";  // Taille du texte  VALEUR
-	var EpPolVal   		= ('#EpPolVal#'   !='#'+'EpPolVal#') ?   "#EpPolVal#"  :"bold";  // Epaisseure du texte  VALEUR autre choix "normal"
-	var CoulVal   		= ('#CoulVal#'   !='#'+'CoulVal#') ?   "#CoulVal#"  :"green";  // couleur texte  VALEUR
-	var CoulValMax   	= ('#CoulValMax#'   !='#'+'CoulValMax#') ?   "#CoulValMax#"  :"red";  // couleur texte  VALEUR
-	var CoulValMin   	= ('#CoulValMin#'   !='#'+'CoulValMin#') ?   "#CoulValMin#"  :"blue";  // couleur texte  VALEUR
-	var MaxVal   		= ('#MaxVal#'   !='#'+'MaxVal#') ?   "#MaxVal#"  :22;  // Max  VALEUR
-	var MinVal   		= ('#MinVal#'   !='#'+'MinVal#') ?   "#MinVal#"  :15;  // Min  VALEUR
+	var TailVal   		= ('#TailVal#'   !='#'+'TailVal#') ?   "#TailVal#"  :'20';  // Taille du texte  VALEUR
+	var EpPolVal   		= ('#EpPolVal#'   !='#'+'EpPolVal#') ?   "#EpPolVal#"  :'bold';  // Epaisseure du texte  VALEUR autre choix "normal"
+	var CoulVal   		= ('#CoulVal#'   !='#'+'CoulVal#') ?   "#CoulVal#"  :'green';  // couleur texte  VALEUR
+	var CoulValMax   	= ('#CoulValMax#'   !='#'+'CoulValMax#') ?   "#CoulValMax#"  :'red';  // couleur texte  VALEUR
+	var CoulValMin   	= ('#CoulValMin#'   !='#'+'CoulValMin#') ?   "#CoulValMin#"  :'blue';  // couleur texte  VALEUR
+	var MaxVal   		= ('#MaxVal#'   !='#'+'MaxVal#') ?   "#MaxVal#"  :'22';  // Max  VALEUR
+	var MinVal   		= ('#MinVal#'   !='#'+'MinVal#') ?   "#MinVal#"  :'15';  // Min  VALEUR
 	var MargeHVal 		= ('#MargeHVal#' !='#'+'MargeHVal#') ? "#MargeHVal#":'10';   // Marge haute Valeur
-	var textAlignVal 	= ('#textAlignVal#' !='#'+'textAlignVal#') ? "#textAlignVal#":'center';   // Mage gauche et droite Valeur
+	var TextAlignVal 	= ('#textAlignVal#' !='#'+'textAlignVal#') ? "#textAlignVal#":'center';   // Mage gauche et droite Valeur
 	var EpBordVal 		= ('#EpBordVal#' !='#'+'EpBordVal#') ? "#EpBordVal#":'0';   // Epaisseur contour Valeur
 	var CoulBordVal 	= ('#CoulBordVal#' !='#'+'CoulBordVal#') ? "#CoulBordVal#":'#ffffff';   // Couleur contour Valeur
 
-	var TailMMT   		= ('#TailMMT#'   !='#'+'TailMMT#') ?   "#TailMMT#"  :"10";  // Taille du NOM
-	var EpPolMMT   		= ('#EpPolMMT#'   !='#'+'EpPolMMT#') ?   "#EpPolMMT#"  :"bold";  // Epaisseure du texte  NOM "bold" autre choix "normal"
-	var CoulMMT   		= ('#CoulMMT#'   !='#'+'CoulMMT#') ?   "#CoulMMT#"  :"White";  // couleur texte  NOM
+	var TailMMT   		= ('#TailMMT#'   !='#'+'TailMMT#') ?   "#TailMMT#"  :'10';  // Taille du NOM
+	var EpPolMMT   		= ('#EpPolMMT#'   !='#'+'EpPolMMT#') ?   "#EpPolMMT#"  :'bold';  // Epaisseure du texte  NOM "bold" autre choix "normal"
+	var CoulMMT   		= ('#CoulMMT#'   !='#'+'CoulMMT#') ?   "#CoulMMT#"  :'white';  // couleur texte  NOM
 	var MargeHMMT 		= ('#MargeHMMT#' !='#'+'MargeHMMT#') ? "#MargeHMMT#":'10';   // Marge haute NOM
-	var textAlignMMT 	= ('#textAlignNom#' !='#'+'textAlignNom#') ? "#textAlignNom#":'center';   // Mage gauche et droite Valeur
+	var TextAlignMMT 	= ('#textAlignNom#' !='#'+'textAlignNom#') ? "#textAlignNom#":'center';   // Mage gauche et droite Valeur
 	var EpBordMMT 		= ('#EpBordMMT#' !='#'+'EpBordMMT#') ? "#EpBordMMT#":'0.4';   // Epaisseur contour Valeur
-	var CoulBordMMT 	= ('#CoulBordMMT#' !='#'+'CoulBordMMT#') ? "#CoulBordMMT#":'#1132de';   // Couleur contour Valeur
+	var CoulBordMMT 	= ('#CoulBordMMT#' !='#'+'CoulBordMMT#') ? "#CoulBordMMT#":'black';   // Couleur contour Valeur
 
-	var TailDur   		= ('#TailDur#'   !='#'+'TailDur#') ?   "#TailDur#"  :"15";  // Taille du NOM
-	var EpPolDur   		= ('#EpPolDur#'   !='#'+'EpPolDur#') ?   "#EpPolDur#"  :"bold";  // Epaisseure du texte  NOM "bold" autre choix "normal"
-	var CoulDur   		= ('#CoulDur#'   !='#'+'CoulDur#') ?   "#CoulDur#"  :"White";  // couleur texte  NOM
+	var TailDur   		= ('#TailDur#'   !='#'+'TailDur#') ?   "#TailDur#"  :'15';  // Taille du NOM
+	var EpPolDur   		= ('#EpPolDur#'   !='#'+'EpPolDur#') ?   "#EpPolDur#"  :'bold';  // Epaisseure du texte  NOM "bold" autre choix "normal"
+	var CoulDur   		= ('#CoulDur#'   !='#'+'CoulDur#') ?   "#CoulDur#"  :'white';  // couleur texte  NOM
 	var MargeHDur 		= ('#MargeHDur#' !='#'+'MargeHDur#') ? "#MargeHDur#":'10';   // Marge haute NOM
-	var textAlignDur 	= ('#textAlignDur#' !='#'+'textAlignDur#') ? "#textAlignDur#":'center';   // Mage gauche et droite Valeur
+	var TextAlignDur 	= ('#textAlignDur#' !='#'+'textAlignDur#') ? "#textAlignDur#":'center';   // Mage gauche et droite Valeur
 	var EpBordDur 		= ('#EpBordDur#' !='#'+'EpBordDur#') ? "#EpBordDur#":'0.4';   // Epaisseur contour Valeur
-	var CoulBordDur 	= ('#CoulBordDur#' !='#'+'CoulBordDur#') ? "#CoulBordDur#":'#1132de';   // Couleur contour Valeur
+	var CoulBordDur 	= ('#CoulBordDur#' !='#'+'CoulBordDur#') ? "#CoulBordDur#":'white';   // Couleur contour Valeur
 
 	var AffDuree 		= ('#AffDuree#' !='#'+'AffDuree#') ? "#AffDuree#":'oui';
 
@@ -116,7 +116,7 @@ jeedom.cmd.update['#id#'] = function(_options){
 	$(".name#id#").css('font-weight', EpPolNom);
 	$(".name#id#").css('color', CoulNom);   
 	$(".name#id#").css('margin-top', MargeHNom+'px' ); 
-	$(".name#id#").css('text-align', textAlignNom);   
+	$(".name#id#").css('text-align', TextAlignNom);   
 	$(".name#id#").css('-webkit-text-stroke', EpBordNom+'px' ); 
 	$(".name#id#").css('-webkit-text-stroke-color', CoulBordNom ); 
 
@@ -124,7 +124,7 @@ jeedom.cmd.update['#id#'] = function(_options){
 	$(".state#id#").css('font-weight', EpPolVal);
 	$(".state#id#").css('color', CoulVal ); 
 	$(".state#id#").css('margin-top', MargeHVal+'px' ); 
-	$(".state#id#").css('text-align', textAlignVal ); 
+	$(".state#id#").css('text-align', TextAlignVal ); 
 	$(".state#id#").css('-webkit-text-stroke' , EpBordVal+'px' ); 
 	$(".state#id#").css('-webkit-text-stroke-color',  CoulBordVal  ); 
 
@@ -132,7 +132,7 @@ jeedom.cmd.update['#id#'] = function(_options){
 	$(".Histo#id#").css('font-weight', EpPolMMT);
 	$(".Histo#id#").css('color', CoulMMT ); 
 	$(".Histo#id#").css('margin-top', MargeHMMT+'px');   
-	$(".Histo#id#").css('text-align', textAlignMMT); 
+	$(".Histo#id#").css('text-align', TextAlignMMT); 
 	$(".Histo#id#").css('-webkit-text-stroke', EpBordMMT+'px' ); 
 	$(".Histo#id#").css('-webkit-text-stroke-color', CoulBordMMT ); 
 
@@ -140,14 +140,15 @@ jeedom.cmd.update['#id#'] = function(_options){
 	$(".AffDuree#id#").css('font-weight', EpPolDur);
 	$(".AffDuree#id#").css('color', CoulDur);   
 	$(".AffDuree#id#").css('margin-top', MargeHDur+'px');   
-	$(".AffDuree#id#").css('text-align', textAlignDur);   
+	$(".AffDuree#id#").css('text-align', TextAlignDur);   
 	$(".AffDuree#id#").css('-webkit-text-stroke', EpBordDur+'px' ); 
 	$(".AffDuree#id#").css('-webkit-text-stroke-color', CoulBordDur ); 
 //
-  if (_options.display_value > MaxVal ) {
-		$(".state#id#").css('color', CoulValMax);   
-	}else if (_options.display_value < MinVal ) { 
-	    $(".state#id#").css('color', CoulValMin);   
+  	var valeur = parseFloat(_options.display_value);
+	if (valeur > MaxVal ) {
+		$(".state#id#").css('color', CoulValMax);
+	}else if (valeur < MinVal ) {
+		$(".state#id#").css('color', CoulValMin);
 	}
 	if( AffDuree == 'oui'){
 		jeedom.cmd.displayDuration(_options.valueDate, $('.cmd[data-cmd_id=#id#] .timeCmd#id#'));
