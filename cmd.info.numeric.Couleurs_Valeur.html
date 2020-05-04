@@ -1,7 +1,11 @@
 <!--
 **********************************************************************
+**********                  Version 1.0.1                   **********
+**********************************************************************
 **********       Variables pour configurer le NOM           **********
 **********************************************************************
+NomCom  // Nom de la commande (défaut Nom de la commande)
+
 TailNom  // Taille (défaut 20)
 EpPolNom  // Epaisseur (défaut bold) autre choix(normal)
 CoulNom  // Couleur (défaut black)
@@ -70,8 +74,11 @@ AffDuree // Afficher la durée oui / non
 jeedom.cmd.update['#id#'] = function(_options){
 
   	$('.cmd[data-cmd_id=#id#] .state#id#').empty().append(_options.display_value+' '+'#unite#');
-	$('.cmd[data-cmd_id=#id#] .name#id#').empty().append('#name#');
+//	$('.cmd[data-cmd_id=#id#] .name#id#').empty().append('#name#');
 
+ 
+	var NomCom = ('#NomCom#' !='#'+'NomCom#') ? "#NomCom#":"#name#";  // remplace le nom de la commande par celui de votre choix
+  
 	var TailNom   		= ('#TailNom#'   !='#'+'TailNom#') ?   "#TailNom#"  :'20';  // Taille du NOM
 	var EpPolNom   		= ('#EpPolNom#'   !='#'+'EpPolNom#') ?   "#EpPolNom#"  :'bold';  // Epaisseure du texte  NOM "bold" autre choix "normal"
 	var CoulNom   		= ('#CoulNom#'   !='#'+'CoulNom#') ?   "#CoulNom#"  :"black";  // couleur texte  NOM
@@ -111,6 +118,7 @@ jeedom.cmd.update['#id#'] = function(_options){
 
 	var AffDuree 		= ('#AffDuree#' !='#'+'AffDuree#') ? "#AffDuree#":'oui';
 
+ 	$('.cmd[data-cmd_id=#id#] .name#id#').empty().append(NomCom);
 
 	$(".name#id#").css('font-size', TailNom+'px');
 	$(".name#id#").css('font-weight', EpPolNom);
